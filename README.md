@@ -25,7 +25,7 @@ APP NAME is a one-stop location to discuss different medical milestones, and AI 
 
 ## 🔐 Use of Solana
 
-We are using Solana for building a secure decentralized and secure payment platform. It is a decentralized, distributed, and open-source blockchain that is designed to be a secure, scalable, and reliable platform for smart contracts. Solana is a blockchain that is designed to be a secure, scalable, and reliable platform for smart contracts.
+We are using Solana for building a secure decentralized and secure payment platform. It is a decentralized, distributed, and open-source blockchain that is designed to be a secure, scalable, and reliable platform for smart contracts.
 
 ## 📄 Use of GitHub
 

@@ -9,7 +9,7 @@ function SendMessage({ scroll }) {
         e.preventDefault()
         const { uid, photoURL } = auth.currentUser
 
-        await firestore.collection('RobertMessages').add({
+        await firestore.collection('jasonMessages').add({
             text: msg,
             photoURL,
             uid,

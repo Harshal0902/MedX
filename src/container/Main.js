@@ -6,8 +6,8 @@ import SkinCancer from '../pages/SkinCancer';
 import Covid from '../pages/CovidPred';
 import BrainTumor from '../pages/BrainTumor';
 import Doctors from '../pages/Doctors';
-import MiaChatroom from '../pages/MiaChatroom/Chatroom';
-import RobertChatroom from '../pages/RobertChatroom/Chatroom';
+import AlexandraChatroom from '../pages/AlexandraChatroom/Chatroom';
+import JasonChatroom from '../pages/JasonChatroom/Chatroom';
 import AliyahChatroom from '../pages/AliyahChatroom/Chatroom';
 import Footer from '../components/Footer';
 
@@ -22,8 +22,8 @@ export default function Main() {
                 <Route path="/covid" element={<Covid />} />
                 <Route path="/brainTumor" element={<BrainTumor />} />
                 <Route path="/doctors" element={<Doctors />} />
-                <Route path="/chat/mia" element={<MiaChatroom />} />
-                <Route path="/chat/robert" element={<RobertChatroom />} />
+                <Route path="/chat/alexandra" element={<AlexandraChatroom />} />
+                <Route path="/chat/jason" element={<JasonChatroom />} />
                 <Route path="/chat/aliyah" element={<AliyahChatroom />} />
             </Routes>
             <Footer />

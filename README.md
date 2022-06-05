@@ -6,9 +6,9 @@ MedX has the prime objective of a disease prediction system, along with a secure
 
 ## 💡 Inspiration
 
-With the rise of people getting affected with Covid-19, we were looking at data on the level of healthcare people all around the world were receiving and one of the things we found was that people in rural areas are clueless about the symptoms of the disease and also lack proper medical supervision/care.
+We were looking at data on the level of healthcare people all around the world were receiving and one of the things we found was that people in rural areas are clueless about the symptoms of the disease and also lack proper medical supervision/care.
 
-Hence, Team 1 came up with the idea of providing people all over the world with a web application that will not only connect those in need with the correct medical care/supervision but also enable them to understand the implications of different diseases in a very intuitive way.
+Hence, Team 1 came up with the idea of providing people a web application that will not only connect those in need with the correct medical care/supervision but also enable them to understand the implications of different diseases in a very intuitive way.
 
 ## 💻 What it does
 
@@ -18,8 +18,9 @@ MedX is a one-stop location to discuss different medical milestones, and AI Dise
 
 - React Js: For frontend
 - Firebase: For backend
-- Google Teachable Machine: For ML and disease prediction
 - Solana: For secure payment
+- Tensorflow.s: For ML and disease prediction
+- Google Teachable Machine: For training the model
 - i18n: For multi-language support
 - Tailwind: For styling and animations
 

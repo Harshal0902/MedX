@@ -12,7 +12,7 @@ export default function Chatroom() {
       setMessages(snapshot.docs.map(doc => doc.data()))
     })
   }, [])
-  console.log(messages)
+
   return (
     <div className='mx-4 pt-8 pb-12'>
 

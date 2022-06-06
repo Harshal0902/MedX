@@ -20,9 +20,9 @@ import {
 import { clusterApiUrl, Connection } from '@solana/web3.js';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider, useAnchorWallet } from '@solana/wallet-adapter-react';
+import { useTranslation } from 'react-i18next'
 import { EnterChatContext } from "../utils/createContext";
 require('@solana/wallet-adapter-react-ui/styles.css');
-import { useTranslation } from 'react-i18next'
 
 const Context = ({ children }) => {
     const network = WalletAdapterNetwork.Devnet;
@@ -179,6 +179,9 @@ export default function Doctors() {
 }
 
 const Content = ({ index }) => {
+
+    const { t } = useTranslation();
+
     const wallet = useAnchorWallet();
     const { setEnterChat } = useContext(EnterChatContext);
     const getProvider = () => {

@@ -29,12 +29,12 @@ export default function Navbar() {
                 </button>
                 {showNavbar ? (
                     <div>
-                        <div className=" flex overflow-x-hidden mx-4 md:mx-8 h-screen overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none md:hidden"
+                        <div className=" flex overflow-x-hidden mx-4 md:mx-8 h-screen overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
                         >
                             <div className="relative my-6 mx-auto w-screen">
                                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-secondary outline-none focus:outline-none">
                                     <div className="flex items-start justify-between p-5 border-solid rounded-t">
-                                        <Link activeClass="active" to="about" spy={true} smooth={true} offset={-150} duration={250}>
+                                        <Link to="/" spy={true} smooth={true} offset={-150} duration={250}>
                                             <div className="text-2xl font-base tracking-wide cursor-pointer">
                                                 {t('logo')}
                                             </div>

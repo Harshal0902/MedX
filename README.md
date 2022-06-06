@@ -12,7 +12,7 @@ Hence, Team 1 came up with the idea of providing people a web application that w
 
 ## 💻 What it does
 
-MedX is a one-stop location to discuss different medical milestones, and AI Disease prediction systems, transfer money through a secure payment system using Solana blockchain, and finally, a translator to get the whole web app in the language one is comfortable with and hence dissolve any communication barrier. This solution with shorten the gap between the people around the world in search of good healthcare and pave a path in the journey of recovery.
+MedX is a one-stop location to discuss different medical milestones, and AI Disease prediction systems, transfer money through a secure payment system using Solana blockchain, and finally, a translator to get the whole web app in the language one is comfortable with and hence dissolve any communication barrier. This solution will shorten the gap between the people around the world in search of good healthcare and pave a path in the journey of recovery.
 
 ## ⚙️ How we built it
 

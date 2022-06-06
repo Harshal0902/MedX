@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, FC, ReactNode, useContext, useMemo, useState } from 'react'
 import AliyahImg from "../assets/aliyah.jpg"
-import MiaImg from "../assets/mia.jpg"
-import RobertImg from "../assets/robert.jpg"
+import AlexandraImg from "../assets/alexandra.jpg"
+import JasonImg from "../assets/jason.jpg"
 import { Link } from "react-router-dom"
-import {Program, Provider, web3, BN} from '@project-serum/anchor';
+import { Program, Provider, web3, BN } from '@project-serum/anchor';
 import idl from "../idl.json";
 import { WalletModalProvider, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import {
@@ -22,6 +22,7 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider, useAnchorWallet } from '@solana/wallet-adapter-react';
 import { EnterChatContext } from "../utils/createContext";
 require('@solana/wallet-adapter-react-ui/styles.css');
+import { useTranslation } from 'react-i18next'
 
 const Context = ({ children }) => {
     const network = WalletAdapterNetwork.Devnet;
@@ -39,7 +40,7 @@ const Context = ({ children }) => {
         ],
         [network]
     );
-      
+
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
@@ -50,13 +51,17 @@ const Context = ({ children }) => {
 };
 
 export default function Doctors() {
+
+    const { t } = useTranslation();
+
     const [setEnterChat, enterChat] = useState([false, false, false]);
+
     return (
-        <div>
+        <div className="min-h-screen">
             <div className=" grid place-items-center py-5">
-                <h1 className="text-5xl font-bold text-white">Doctors</h1>
+                <h1 className="text-5xl font-bold text-white">{t('navLinkDoctors')}</h1>
                 <div className='bg-blue-500 h-1 w-36 my-2 rounded-lg'></div>
-                <Context> <WalletMultiButton/></Context>
+                <Context> <WalletMultiButton /></Context>
             </div>
 
             <div className="flex flex-wrap flex-col-3 justify-around w-full px-16 py-8 gap-4">
@@ -67,7 +72,7 @@ export default function Doctors() {
                     </div>
                     <div id="description" className="space-y-4">
                         <h2 className="font-semibold text-xl">
-                            Aliyah
+                            {t('doctorName1')}
                         </h2>
                         <p className="text-slate-500 text-sm select-none">  </p>
                         <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
@@ -81,20 +86,20 @@ export default function Doctors() {
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                Mon-Fri
+                                {t('doctorName1Day')}
                             </span>
                         </div>
                         <div className="flex flex-col items-center space-y-2">
                             {/* <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white' onClick={() => {
                                 bookAppointment()
-                            }}>Book Appointment</button> */}
+                            }}>{t('doctorBookAppointment')}</button> */}
                             <EnterChatContext.Provider value={[setEnterChat, enterChat]}>
-                            <Context>
-                           <Content />
-                            </Context>
+                                <Context>
+                                    <Content />
+                                </Context>
                             </EnterChatContext.Provider>
-                            {(<Link to="/chat/robert">
-                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>Enter chatroom</button>
+                            {(<Link to="/chat/aliyah">
+                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>{t('doctorEnterChatroom')}</button>
                             </Link>)}
                         </div>
                     </div>
@@ -102,11 +107,11 @@ export default function Doctors() {
 
                 <div className=" bg-gray-200 w-80 h-[32rem] rounded-xl p-6 space-y-4">
                     <div>
-                        <img className="w-full h-64 rounded-md transition hover:bg-cyan-300" src={MiaImg} alt="" />
+                        <img className="w-full h-64 rounded-md transition hover:bg-cyan-300" src={AlexandraImg} alt="" />
                     </div>
                     <div id="description" className="space-y-4">
                         <h2 className="font-semibold text-xl">
-                            Mia
+                            {t('doctorName2')}
                         </h2>
                         <p className="text-slate-500 text-sm select-none">  </p>
                         <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
@@ -120,15 +125,15 @@ export default function Doctors() {
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                Wed-Fri
+                                {t('doctorName2Day')}
                             </span>
                         </div>
                         <div className="flex flex-col items-center space-y-2">
-                        <Context>
-                           <Content />
+                            <Context>
+                                <Content />
                             </Context>
-                            {(<Link to="/chat/robert">
-                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>Enter chatroom</button>
+                            {(<Link to="/chat/alexandra">
+                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>{t('doctorEnterChatroom')}</button>
                             </Link>)}
                         </div>
                     </div>
@@ -136,11 +141,11 @@ export default function Doctors() {
 
                 <div className=" bg-gray-200 w-80 h-[32rem] rounded-xl p-6 space-y-4">
                     <div>
-                        <img className="w-full h-64 rounded-md transition hover:bg-cyan-300" src={RobertImg} alt="" />
+                        <img className="w-full h-64 rounded-md transition hover:bg-cyan-300" src={JasonImg} alt="" />
                     </div>
                     <div id="description" className="space-y-4">
                         <h2 className="font-semibold text-xl">
-                            Robert
+                            {t('doctorName3')}
                         </h2>
                         <p className="text-slate-500 text-sm select-none">  </p>
                         <div className="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
@@ -154,17 +159,17 @@ export default function Doctors() {
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                                         clip-rule="evenodd" />
                                 </svg>
-                                Wed-Fri
+                                {t('doctorName3Day')}
                             </span>
                         </div>
                         <div className="flex flex-col items-center space-y-2">
-                        <Context>
-                           <Content />
+                            <Context>
+                                <Content />
                             </Context>
                             {(<Link to="/chat/robert">
-                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>Enter chatroom</button>
+                                <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>{t('doctorEnterChatroom')}</button>
                             </Link>)}
-                           
+
                         </div>
                     </div>
                 </div>
@@ -173,9 +178,9 @@ export default function Doctors() {
     )
 }
 
-const Content = ({index}) => {
+const Content = ({ index }) => {
     const wallet = useAnchorWallet();
-    const {setEnterChat} = useContext(EnterChatContext);
+    const { setEnterChat } = useContext(EnterChatContext);
     const getProvider = () => {
         if (!wallet) {
             console.log(wallet)
@@ -185,7 +190,7 @@ const Content = ({index}) => {
         const connection = new Connection(network, "processed");
         const provider = new Provider(connection, wallet, { "preflightCommitment": "processed" });
         return provider;
-    } 
+    }
     async function createCounter() {
         console.log("Creating Counter");
         const provider = getProvider();
@@ -199,7 +204,7 @@ const Content = ({index}) => {
         const program = new Program(b, idl.metadata.address, provider);
         console.log(provider);
         try {
-            await program.rpc.initialize(new BN(100),{
+            await program.rpc.initialize(new BN(100), {
                 accounts: {
                     myAccount: baseAccount.publicKey,
                     user: provider.wallet.publicKey,
@@ -208,18 +213,18 @@ const Content = ({index}) => {
                 signers: [baseAccount]
             });
             const account = await program.account.myAccount.fetch(baseAccount.publicKey);
-            setEnterChat([true,false,false]);
-            console.log(account,account);
+            setEnterChat([true, false, false]);
+            console.log(account, account);
         } catch (err) {
             console.error(err);
-            setEnterChat([true,false,false]);
+            setEnterChat([true, false, false]);
         }
     }
     return (
         <div >
-        <button className='bg-purple-900 py-2 px-8 rounded-md text-md font-semibold text-white' onClick={createCounter}>Book Appointment</button>
-        {/* <div className='flex justify-center py-2'><WalletMultiButton /></div> */}
-            {/* <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>Enter chatroom</button> */}
+            <button className='bg-purple-900 py-2 px-8 rounded-md text-md font-semibold text-white' onClick={createCounter}>{t('doctorBookAppointment')}</button>
+            {/* <div className='flex justify-center py-2'><WalletMultiButton /></div> */}
+            {/* <button className='bg-secondary py-2 px-8 rounded-md text-md font-semibold text-white'>{t('doctorEnterChatroom')}</button> */}
         </div>
-      )
+    )
 }
